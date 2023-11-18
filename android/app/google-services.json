@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "717697979750",
+    "project_id": "sapura-42b81",
+    "storage_bucket": "sapura-42b81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717697979750:android:cfc5249fedb171d3d924a7",
+        "android_client_info": {
+          "package_name": "com.mjd.sapura_tm.sapura_tm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqogw2jhLFZ8I3YI7151OK0V99O4eegio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
