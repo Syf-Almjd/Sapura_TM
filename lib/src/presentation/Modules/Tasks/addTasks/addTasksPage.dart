@@ -120,9 +120,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                                 AppColors.greyDark.withOpacity(0.05),
                             initialItem: usersData[0],
                             onChanged: (value) {
-                              setState(() {
-                                assignedTo = value;
-                              });
+                              assignedTo = value;
                             },
                           ),
                         ),
@@ -185,9 +183,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                                 AppColors.greyDark.withOpacity(0.05),
                             initialItem: statusData[0],
                             onChanged: (value) {
-                              setState(() {
-                                selectedStatus = value;
-                              });
+                              selectedStatus = value;
                             },
                           ),
                         ),
@@ -221,17 +217,19 @@ class _AddTaskPageState extends State<AddTaskPage> {
   }
 
   validateAdd(assignedTo, selectedStatus) {
-    Task newTask = Task(
-        id: project.text,
-        project: project.text,
-        task: task.text,
-        assignedTo: assignedTo,
-        dateFrom: dateFrom.text,
-        dateTo: dateTo.text,
-        status: selectedStatus);
-    RemoteDataCubit.get(context).addTask(newTask).then((value) {
-      showToast("Successfully Created!", context);
-      NaviCubit.get(context).pop(context);
-    });
+    if (validateForm(textForm)) {
+      Task newTask = Task(
+          id: project.text,
+          project: project.text,
+          task: task.text,
+          assignedTo: assignedTo,
+          dateFrom: dateFrom.text,
+          dateTo: dateTo.text,
+          status: selectedStatus);
+      RemoteDataCubit.get(context).addTask(newTask).then((value) {
+        showToast("Successfully Created!", context);
+        NaviCubit.get(context).pop(context);
+      });
+    }
   }
 }
