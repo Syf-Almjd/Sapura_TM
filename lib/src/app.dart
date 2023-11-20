@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
           create: (context) => NaviCubit(),
         ),
       ],
+      //MaterialApp Configuration
       child: MaterialApp(
           locale: DevicePreview.locale(context),
           builder: DevicePreview.appBuilder,
