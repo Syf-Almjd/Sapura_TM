@@ -60,11 +60,11 @@ dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/logo.png"
+  image_path: "assets/sapura_logo.jpg"
   min_sdk_android: 21 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/images/logo.png"
+    image_path: "assets/sapura_logo.jpg"
 
 
 dev_dependencies:
