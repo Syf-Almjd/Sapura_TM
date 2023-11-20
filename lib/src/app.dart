@@ -1,7 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sapura_tm/src/config/themes/theme_manager.dart';
 import 'package:sapura_tm/src/presentation/Cubits/appNavi_cubit/navi_cubit.dart';
 
 import 'config/utils/managers/app_constants.dart';
@@ -27,8 +26,6 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           title: AppConstants.appTitle,
-          theme: getApplicationTheme(),
-          // darkTheme: getDarkApplicationTheme(), // we will not use darktheme
           home: const AuthPage()),
     );
   }
