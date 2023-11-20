@@ -121,9 +121,7 @@ class _EditTaskPageState extends State<EditTaskPage> {
                                 AppColors.greyDark.withOpacity(0.05),
                             initialItem: usersData[0],
                             onChanged: (value) {
-                              setState(() {
-                                assignedTo = value;
-                              });
+                              assignedTo = value;
                             },
                           ),
                         ),
@@ -186,9 +184,7 @@ class _EditTaskPageState extends State<EditTaskPage> {
                                 AppColors.greyDark.withOpacity(0.05),
                             initialItem: statusData[0],
                             onChanged: (value) {
-                              setState(() {
-                                selectedStatus = value;
-                              });
+                              selectedStatus = value;
                             },
                           ),
                         ),
@@ -222,17 +218,19 @@ class _EditTaskPageState extends State<EditTaskPage> {
   }
 
   validateUpdate(assignedTo, selectedStatus) {
-    Task updatedTask = Task(
-        id: widget.task.id,
-        project: project.text,
-        task: task.text,
-        assignedTo: assignedTo,
-        dateFrom: dateFrom.text,
-        dateTo: dateTo.text,
-        status: selectedStatus);
-    RemoteDataCubit.get(context).updateTask(updatedTask).then((value) {
-      showToast("Successfully Updated!", context);
-      NaviCubit.get(context).navigateToHome(context);
-    });
+    if (validateForm(textForm)) {
+      Task updatedTask = Task(
+          id: widget.task.id,
+          project: project.text,
+          task: task.text,
+          assignedTo: assignedTo,
+          dateFrom: dateFrom.text,
+          dateTo: dateTo.text,
+          status: selectedStatus);
+      RemoteDataCubit.get(context).updateTask(updatedTask).then((value) {
+        showToast("Successfully Updated!", context);
+        NaviCubit.get(context).navigateToHome(context);
+      });
+    }
   }
 }
