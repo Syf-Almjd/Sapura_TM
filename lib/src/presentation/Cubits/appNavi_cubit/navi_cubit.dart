@@ -24,8 +24,10 @@ class NaviCubit extends Cubit<NaviState> {
   }
 
   void navigateToHome(context) {
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const HomePage()),
+        (route) => false);
     emit(HomeState());
   }
 

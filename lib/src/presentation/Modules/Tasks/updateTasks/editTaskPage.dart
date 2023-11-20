@@ -107,7 +107,7 @@ class _EditTaskPageState extends State<EditTaskPage> {
                     child: Row(
                       children: [
                         Text(
-                          "Assigned To",
+                          "Assigned To:  ",
                           style: TextStyle(color: AppColors.greyDark),
                         ),
                         Flexible(
@@ -116,9 +116,9 @@ class _EditTaskPageState extends State<EditTaskPage> {
                             closedBorder: Border.all(),
                             items: usersData.toList(),
                             expandedFillColor:
-                                AppColors.greyDark.withOpacity(0.7),
+                                AppColors.greyDark.withOpacity(0.5),
                             closedFillColor:
-                                AppColors.greyDark.withOpacity(0.7),
+                                AppColors.greyDark.withOpacity(0.05),
                             initialItem: usersData[0],
                             onChanged: (value) {
                               setState(() {
@@ -172,7 +172,7 @@ class _EditTaskPageState extends State<EditTaskPage> {
                     child: Row(
                       children: [
                         Text(
-                          "Status: ",
+                          "Status:  ",
                           style: TextStyle(color: AppColors.greyDark),
                         ),
                         Flexible(
@@ -181,9 +181,9 @@ class _EditTaskPageState extends State<EditTaskPage> {
                             closedBorder: Border.all(),
                             items: statusData.toList(),
                             expandedFillColor:
-                                AppColors.greyDark.withOpacity(0.7),
+                                AppColors.greyDark.withOpacity(0.5),
                             closedFillColor:
-                                AppColors.greyDark.withOpacity(0.7),
+                                AppColors.greyDark.withOpacity(0.05),
                             initialItem: statusData[0],
                             onChanged: (value) {
                               setState(() {
